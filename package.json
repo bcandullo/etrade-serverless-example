@@ -1,0 +1,30 @@
+{
+  "name": "etrade-serverless-example",
+  "author": {
+    "name": "brad c",
+    "email": "brizad@gmail.com"
+  },
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "npm run api:dev:watch",
+    "api:dev:watch": "npm run api:build -- -w",
+    "api:build": "tsc -p ./tsconfig.json",
+    "api:offline": "nodemon --exec ./node_modules/.bin/serverless offline --httpPort=8000",
+    "offline": "npm run api:offline"
+  },
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "e-trade-api": "^0.3.0",
+    "serverless": "^3.28.1"
+  },
+  "devDependencies": {
+    "@types/aws-lambda": "^8.10.111",
+    "@types/cli-color": "^2.0.2",
+    "@types/node": "^18.14.5",
+    "cli-color": "^2.0.3",
+    "nodemon": "^3.1.0",
+    "serverless-offline": "^12.0.4",
+    "typescript": "^4.9.5"
+  }
+}

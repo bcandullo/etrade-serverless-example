@@ -1,0 +1,25 @@
+service: etrade-serverless
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: nodejs16.x
+
+plugins:
+  - serverless-offline
+
+functions:
+  auth:
+    handler: build/handlers/auth/auth.handler
+    events:
+      - httpApi:
+          path: /auth
+          method: post
+
+  # open-position:
+  #   handler: build/handlers/position/open-position.handler
+  #   timeout: 30
+  #   events:
+  #     - httpApi:
+  #         path: /position/open
+  #         method: post
